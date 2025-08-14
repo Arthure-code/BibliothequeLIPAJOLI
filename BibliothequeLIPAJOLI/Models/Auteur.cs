@@ -2,26 +2,13 @@
 
 namespace BibliothequeLIPAJOLI.Models
 {
-    public class Auteur
+    public class Auteur : Personne
     {
-        [Key]
-        public int AuteurID { get; set; }
+        public DateTime? DateDeces { get; set; }
+        public string? Biographie { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Le nom est obligatoire.")]
-        [StringLength(50, ErrorMessage = "Le nom ne peut pas dépasser 50 caractères.")]
-        public string Nom { get; set; }
+        public string? PhotoUrl { get; set; } = string.Empty;
 
-        [Required(ErrorMessage = "Le prénom est obligatoire.")]
-        [StringLength(50, ErrorMessage = "Le prénom ne peut pas dépasser 50 caractères.")]
-        public string Prenom { get; set; }
-
-        [EmailAddress(ErrorMessage = "Adresse courriel invalide.")]
-        public string Courriel { get; set; }
-
-        [Required(ErrorMessage = "La date de naissance est obligatoire.")]
-        [DataType(DataType.Date)]
-        public DateTime DateNaissance { get; set; }
-
-        public ICollection<Redaction> Redactions { get; set; }
+        public ICollection<Redaction> Redactions { get; set; } = new List<Redaction>();
     }
 }

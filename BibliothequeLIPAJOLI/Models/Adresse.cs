@@ -23,6 +23,6 @@ namespace BibliothequeLIPAJOLI.Models
         [StringLength(10)]
         public string? CodePostale { get; set; }
 
-        public ICollection<TypeAdresse>? TypeAdresses { get; set; }
+        public ICollection<TypeAdresse>? UsagerAdresse { get; set; }
     }
 }

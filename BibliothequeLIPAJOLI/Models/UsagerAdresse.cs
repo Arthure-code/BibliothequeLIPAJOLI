@@ -2,7 +2,15 @@
 
 namespace BibliothequeLIPAJOLI.Models
 {
-    public class TypeAdresse
+
+    public enum TypeAdresse
+    {
+        Principale,
+        Secondaire,
+        Bureau,
+        Autre
+    }
+    public class UsagerAdresse
     {
         public int UsagerID { get; set; }
         public Usager? Usager { get; set; }
@@ -11,6 +19,8 @@ namespace BibliothequeLIPAJOLI.Models
         public Adresse? Adresse { get; set; }
 
         [Required(ErrorMessage = "Le type d'adresse est obligatoire.")]
-        public string TypeAdresseLibelle { get; set; }
+        public TypeAdresse TypeAdresse { get; set; }
+        public DateTime? DateDebut { get; set; }
+        public DateTime? DateFin { get; set; }
     }
 }
